@@ -14,12 +14,17 @@ function UI(cvs){
 		var gridHeight = this.height / rows;
 		var x = 0; 
 		var y = 0;
-		this.cvsbufctx.fillStyle = "#000";
 		this.cvsbufctx.strokeStyle = "#fff";
 		for (var i = 0; i < rows; i++){
 			x = 0;
 			for (var j = 0; j < cols; j++){
-				if (matrix[i][j]) {
+				if (matrix[i][j] == 1) {
+					this.cvsbufctx.fillStyle = "#888";
+					this.cvsbufctx.fillRect(x, y, gridWidth, gridHeight);
+					this.cvsbufctx.strokeRect(x, y, gridWidth, gridHeight);
+				}
+				else if (matrix[i][j] == 2){
+					this.cvsbufctx.fillStyle = "#000";
 					this.cvsbufctx.fillRect(x, y, gridWidth, gridHeight);
 					this.cvsbufctx.strokeRect(x, y, gridWidth, gridHeight);
 				}
